@@ -1,0 +1,17 @@
+#subreddit-list {
+	margin: 10px 0 0; /* @alternate */
+	margin: 1rem 0 0;
+}
+
+	.subreddit-list-item {
+		margin: 0 0 10px; /* @alternate */
+		margin: 0 0 1rem;
+	}
+
+.inline-error {
+	background: #FE5050;
+	border-radius: 3px;
+	color: #FFF;
+	display: inline-block;
+	padding: 5px 10px;
+}

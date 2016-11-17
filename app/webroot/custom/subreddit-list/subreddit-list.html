@@ -1,0 +1,45 @@
+<h1>Subreddits</h1>
+
+<p>You can add a subreddit by entering its name into the textbox below and hitting “return”. You can also uncheck the subreddits you don’t want to see.</p>
+
+<p>Tip: After you created your list of favorite subreddits and clicked on the “View subreddits” button, bookmark the page in your browser for quicker access.</p>
+
+<ul id="subreddit-list">
+	<li class="subreddit-list-item">
+		<input id="a" ng-change="selectAll()" ng-model="allAreSelected" type="checkbox">
+		<label for="a">Select all</label>
+	</li>
+
+	<li class="subreddit-list-item" ng-repeat="s in subreddits">
+		<input id="s{{$index}}" name="{{s.name}}" ng-change="toggle()" ng-model="s.isChecked" type="checkbox" value="/r/{{s.id}}">
+		<label for="s{{$index}}">/r/{{s.name}}</label>
+	</li>
+
+	<li ng-if="!subreddits.length">Please add one or more subreddits.</li>
+</ul>
+
+<ul>
+	<li>
+		<input class="short" ng-keyup="keyUp($event)" ng-model="name" placeholder="Subreddit" type="text">
+		<button ng-click="add()">Add</button>
+	</li>
+
+	<li class="inline-error" ng-if="err">{{err}}</li>
+
+	<li>
+		<br>
+		<button ng-click="view()">View subreddits</button>
+	</li>
+</ul>
+
+<!--
+<input ng-change="retrieveSubredditsFromReddit" ng-model="search.subredditName">
+
+<ul id="subreddit-list" ng-init="retrieveSubredditsFromReddit()">
+	<li class="subreddit-list-item" ng-repeat="subreddit in subreddits">
+		<a href="{{subreddit.data.url}}">/r/{{subreddit.data.display_name}}</a><br>
+		{{subreddit.data.public_description}}<br>
+		<span>{{subreddit.data.subscribers | number}} subscribers</span>
+	</li>
+</ul>
+-->

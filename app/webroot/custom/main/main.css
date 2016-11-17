@@ -1,0 +1,272 @@
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+html {
+	background: #F9F9F9; /* @alternate */
+	background: -webkit-linear-gradient(#F9F9F9, #F7F7F7) fixed; /* @alternate */
+	background:    -moz-linear-gradient(#F9F9F9, #F7F7F7) fixed; /* @alternate */
+	background:     -ms-linear-gradient(#F9F9F9, #F7F7F7) fixed; /* @alternate */
+	background:         linear-gradient(#F9F9F9, #F7F7F7) fixed;
+	color: #282828;
+	font-family: -apple-system, "Roboto", "Ubuntu", "Helvetica Neue", "Helvetica", sans-serif;
+	font-size: 62.5%;
+	font-weight: 300;
+	text-rendering: geometricPrecision;
+
+	/* Show scrollbar right away so the available width for our board remains the same when images are added. */
+	overflow-y: scroll;
+
+	/* Prevent Webkit on iOS from scaling text up when orientation is changed to landscape. */
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-size: 16px; /* @alternate */
+	font-size: 1.6rem;
+}
+
+a {
+	color: #0154A4;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #4B81BD;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 1.7;
+	margin: 5px 0 3px; /* @alternate */
+	margin: 0.5em 0 0.3em;
+	word-wrap: break-word;
+}
+
+h1 {
+	font-size: 29px; /* @alternate */
+	font-size: 2.9rem;
+	font-weight: 300;
+}
+
+p {
+	line-height: 130%;
+	margin: 0 0 10px; /* @alternate */
+	margin: 0 0 1rem;
+	max-width: 728px;
+	word-wrap: break-word;
+}
+
+.inline-list {
+
+}
+
+	.inline-list-item {
+		display: inline-block;
+		margin: 0 10px 0 0; /* @alternate */
+		margin: 0 1rem 0 0;
+		vertical-align: middle;
+	}
+
+.max-width-m {
+	max-width: 60rem;
+}
+
+strong {
+	font-weight: bold;
+}
+
+table {
+
+}
+
+	tr {
+
+	}
+
+		th {
+			font-weight: bold;
+			text-align: center;
+		}
+
+		td,
+		th {
+			padding: 1px 5px; /* @alternate */
+			padding: 0.1rem 0.5rem;
+		}
+
+#nav-list {
+	display: -webkit-flex; /* @alternate */
+	display:     -ms-flexbox; /* @alternate */
+	display:         flex;
+	margin: 5px 0; /* @alternate */
+	margin: 0.5rem 0;
+	padding: 5px 13px; /* @alternate */
+	padding: 0.5rem 1.3rem;
+
+	-webkit-align-items: baseline;
+	        align-items: baseline;
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+	.nav-list-item {
+		display: inline-block;
+		margin: 0 5px 0 0; /* @alternate */
+		margin: 0 0.5rem 0 0;
+	}
+
+	.nav-list-item:last-child {
+		margin-right: 0;
+	}
+
+	.nav-list-item-flex {
+		-webkit-flex: 1 0 auto;
+		    -ms-flex: 1 0 auto;
+		        flex: 1 0 auto;
+	}
+
+		.nav-link,
+		.nav-link:visited {
+			color: #333;
+			display: inline-block;
+			padding: 7px 10px; /* @alternate */
+			padding: 0.7rem 1rem;
+			text-transform: uppercase;
+		}
+
+		.nav-link.active,
+		.nav-link:hover {
+			color: #E83A41;
+		}
+
+#content {
+	margin: 0 20px 15px; /* @alternate */
+	margin: 0 2rem 1.5rem;
+}
+
+.flex-list {
+	display: -webkit-flex;
+	display:     -ms-flexbox;
+	display:         flex;
+	margin-right: -10px; /* @alternate */
+	margin-right: -1rem;
+
+	-webkit-align-items: center;
+	        align-items: center;
+
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+	/* Fallback for IE 9- as they don’t support flex behavior. */
+	.flex-list-item {
+		display: inline-block;
+		margin: 0 10px 10px 0; /* @alternate */
+		margin: 0 1rem 1rem 0;
+	}
+
+	.flex-list-item > :last-child {
+		margin-bottom: 0;
+		margin-right: 0;
+	}
+
+		.flex {
+			-webkit-flex: 1 0 auto;
+			    -ms-flex: 1 0 auto;
+			        flex: 1 0 auto;
+		}
+
+a[target="_blank"]::after {
+	/* Inlined image is ic_open_in_new_24px.svg */
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkgMTlINVY1aDdWM0g1Yy0xLjExIDAtMiAuOS0yIDJ2MTRjMCAxLjEuODkgMiAyIDJoMTRjMS4xIDAgMi0uOSAyLTJ2LTdoLTJ2N3pNMTQgM3YyaDMuNTlsLTkuODMgOS44MyAxLjQxIDEuNDFMMTkgNi40MVYxMGgyVjNoLTd6IiBmaWxsPSIjOEI4QjhCIi8+PC9zdmc+");
+	background-repeat: no-repeat;
+	background-size: 1.2rem;
+	content: "";
+	display: inline-block;
+	height: 1.2rem;
+	margin: 0 0 -0.1rem 0.2rem;
+	width: 1.2rem;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-text {
+	text-align: center;
+}
+
+/* Reduce margins on mobile phones. */
+@media (max-width: 480px) {
+	#content {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
+	#nav-list {
+		padding-left: 0.7rem;
+		padding-right: 0.7rem;
+	}
+
+		.nav-link {
+			padding-left: 0.3rem;
+			padding-right: 0.3rem;
+		}
+}
+
+@media (max-width: 384px) {
+	#nav-list {
+		display: block;
+	}
+
+		.nav-list-item {
+			margin-right: 0.3rem;
+		}
+}
+
+noscript {
+	display: block;
+	margin: 30px 0; /* @alternate */
+	margin: 3rem 0;
+	text-align: center;
+}
+
+	noscript p {
+		max-width: none;
+		margin-bottom: 2rem;
+	}
+
+	noscript table {
+		font-size: 14px; /* @alternate */
+		font-size: 1.4rem;
+		margin: 20px auto; /* @alternate */
+		margin: 2rem auto;
+		text-align: left;
+	}
+
+
+		noscript td,
+		noscript th {
+			border: 1px solid #333;
+			border-width: 0 1px 1px 0;
+		}
+
+		noscript td:last-of-type,
+		noscript th:last-of-type {
+			border-right: none;
+		}

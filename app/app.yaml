@@ -1,0 +1,97 @@
+application: panoptikos3
+version: 2015-10-20
+runtime: go
+api_version: go1
+
+# Set default expiration for static files to 7 days
+default_expiration: "7d"
+
+error_handlers:
+  - error_code: dos_api_denial
+    file: error-pages/dos-api-denial.html
+
+  - error_code: over_quota
+    file: error-pages/over-quota.html
+
+  - error_code: timeout
+    file: error-pages/timeout.html
+
+handlers:
+# UNCOMMENT THIS BLOCK TO ENABLE DEVELOPMENT MODE.
+# Allow access to development CSS and JS files locally.
+# Development CSS and JS files are not uploaded. See skip_files below.
+- url: /(.*\.css)
+  static_files: webroot/custom/\1
+  upload: webroot/custom/(.*\.css)
+  expiration: "0s"
+
+- url: /(.*\.js)
+  static_files: webroot/\1
+  upload: webroot/(.*\.js)
+  expiration: "0s"
+
+# UNCOMMENT THIS BLOCK TO ENABLE DEVELOPMENT MODE.
+# Allow access to development HTML template files locally.
+# Development HTML template files are not uploaded. See skip_files below.
+- url: /.*\.html
+  script: _go_app
+
+# File doesn't exist but some browsers request it, so serve an equivalent one.
+- url: /apple-touch-icon-precomposed\.png
+  static_files: webroot/custom/main/images/a4.png
+  upload: webroot/custom/main/images/a4\.png
+
+# File doesn't exist but some browsers request it, so serve an equivalent one.
+- url: /favicon\.ico
+  static_files: webroot/custom/main/images/f1.ico
+  upload: webroot/custom/main/images/f1\.ico
+
+- url: /(.*\.(?:ico|png))
+  static_files: webroot/custom/main/images/\1
+  upload: webroot/custom/main/images/.*\.(?:ico|png)
+
+- url: /robots\.txt
+  static_files: webroot/robots.txt
+  upload: webroot/robots\.txt
+  expiration: "1d"
+
+- url: /api/1/.*
+  script: _go_app
+
+- url: /worker/.*
+  login: admin
+  script: _go_app
+
+# Handle requests to legacy URLs
+- url: /(feeds|pictures|preferences|referrals|sources)(/.*)?
+  script: _go_app
+
+# UNCOMMENT THIS BLOCK TO ENABLE DEVELOPMENT MODE.
+# Serve development index.html
+- url: /.*
+  static_files: webroot/custom/main/index.html
+  upload: webroot/custom/main/index\.html
+  expiration: "0s"
+
+# # COMMENT THIS BLOCK TO DISABLE PRODUCTION MODE.
+# # Serve production index.html
+# - url: /.*
+#   static_files: webroot/compiled-index/index-1yUW9B.html
+#   upload: webroot/compiled-index/index-1yUW9B\.html
+#   expiration: "6h"
+
+# Files to skip when uploading the app to Google App Engine
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?webroot/dev-css
+- ^(.*/)?webroot/dev-js
+- ^(.*/)?webroot/dev-partials
+- ^temp/

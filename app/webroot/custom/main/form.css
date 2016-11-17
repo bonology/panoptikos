@@ -1,0 +1,156 @@
+button,
+input,
+select,
+textarea {
+	text-rendering: geometricPrecision;
+}
+
+button,
+.button {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	background: #F6F6F6;
+	border: none;
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: -apple-system, "Roboto", "Ubuntu", "Helvetica Neue", "Helvetica", sans-serif;
+	font-size: 16px; /* @alternate */
+	font-size: 1.6rem;
+	margin: 0;
+	outline: none;
+	padding: 9px 20px; /* @alternate */
+	padding: 0.9rem 2rem;
+	text-decoration: none;
+	vertical-align: middle;
+
+	-webkit-border-radius: 0.3rem;
+	   -moz-border-radius: 0.3rem;
+	        border-radius: 0.3rem;
+}
+
+button:hover,
+.button:hover {
+	background: #E7E7E7;
+}
+
+button:active,
+.button:active {
+	background: #D9D9D9;
+	box-shadow: 0 0 2px 0 rgba(146, 102, 102, 0.16) inset;
+	padding: 10px 20px 8px; /* @alternate */
+	padding: 1rem 2rem 0.8rem;
+}
+
+/* Remove button padding in Firefox */
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+button.primary,
+.button.primary {
+	background-color: #7ECB61;
+}
+
+button.primary:hover,
+.button.primary:hover {
+	background-color: #85CF69;
+}
+
+input,
+textarea {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	background-color: #F1F1F2;
+	border-radius: 0.3rem;
+	border-width: 0;
+	color: #767676;
+	outline: none;
+	margin: 0 10px 10px 0; /* @alternate */
+	margin: 0 1rem 1rem 0;
+	max-width: 600px;
+	padding: 10px; /* @alternate */
+	padding: 1rem;
+	text-shadow: 1px 1px #FFF; /* @alternate */
+	text-shadow: 0.1rem 0.1rem #FFF;
+	vertical-align: middle;
+	width: 100%;
+
+	-webkit-box-shadow: inset 0 1px 1px #CCC;
+	        box-shadow: inset 0 1px 1px #CCC;
+}
+
+input:last-child,
+textarea:last-child {
+	margin-right: 0;
+}
+
+input[type=text].short {
+	max-width: 300px;
+}
+
+input:focus,
+textarea:focus {
+	background-color: #F3F3F4;
+	color: #818181;
+}
+
+input[type=checkbox] {
+	-webkit-appearance: checkbox;
+	margin: 0 5px 2px 0; /* @alternate */
+	margin: 0 0.5rem 0.2rem 0;
+	width: auto;
+}
+
+label {
+	display: inline-block;
+	font-size: 17px; /* @alternate */
+	font-size: 1.7rem;
+	margin: 0 0 3px; /* @alternate */
+	margin: 0 0 0.3rem;
+}
+
+	input[type=checkbox] + label {
+		font-weight: normal;
+	}
+
+	input[type=checkbox][disabled] + label {
+		color: #999;
+	}
+
+	label + select {
+		margin-left: 1rem;
+	}
+
+textarea {
+	min-height: 150px; /* @alternate */
+	min-height: 15rem;
+	resize: vertical;
+}
+
+.button-bar {
+	display: inline-block;
+}
+
+	.button-bar > button {
+		border-right-width: 0;
+
+		-webkit-border-radius: 0;
+		   -moz-border-radius: 0;
+		        border-radius: 0;
+	}
+
+	.button-bar > button:first-of-type {
+		-webkit-border-radius: 6px 0 0 6px;
+		   -moz-border-radius: 6px 0 0 6px;
+		        border-radius: 6px 0 0 6px;
+	}
+
+	.button-bar > button:last-of-type {
+		border-right-width: 1px;
+
+		-webkit-border-radius: 0 6px 6px 0;
+		   -moz-border-radius: 0 6px 6px 0;
+		        border-radius: 0 6px 6px 0;
+	}

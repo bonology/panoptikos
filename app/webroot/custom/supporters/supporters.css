@@ -1,0 +1,16 @@
+#supporters-table {
+	display: table;
+	margin: 0 auto;
+}
+
+	.supporters-table-row {
+		margin: 10px 0; /* @alternate */
+		margin: 1rem 0;
+	}
+
+#patreon-plug {
+	font-size: 20px; /* @alternate */
+	font-size: 2rem;
+	margin: 3rem 0;
+	text-align: center;
+}

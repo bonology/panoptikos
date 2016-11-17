@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<title>Panoptikos - Reddit image viewer</title>
+
+		<!-- CSS -->
+		<!-- COMPILED_CSS_HERE -->
+		<link href="/main/reset.css" rel="stylesheet">
+		<link href="/main/main.css" rel="stylesheet">
+		<link href="/main/flash.css" rel="stylesheet">
+		<link href="/main/form.css" rel="stylesheet">
+		<link href="/feedback/feedback.css" rel="stylesheet">
+		<link href="/settings/settings.css" rel="stylesheet">
+		<link href="/subreddit-list/subreddit-list.css" rel="stylesheet">
+		<link href="/supporters/supporters.css" rel="stylesheet">
+		<link href="/thread-list/thread-list.css" rel="stylesheet">
+
+		<!-- Favicons. The first one is an .ico file because Internet Explorer can’t handle anything else. -->
+		<link href="/f1.ico" rel="icon" sizes="16x16">
+		<link href="/f2.png" rel="icon" sizes="32x32">
+		<link href="/f3.png" rel="icon" sizes="64x64">
+		<link href="/f4.png" rel="icon" sizes="128x128">
+
+		<!-- Icons that are used when the website is added to the home screen on iOS. -->
+		<link href="/a1.png" rel="apple-touch-icon" sizes="72x72">
+		<link href="/a2.png" rel="apple-touch-icon" sizes="144x144">
+		<link href="/a3.png" rel="apple-touch-icon" sizes="57x57">
+		<link href="/a4.png" rel="apple-touch-icon" sizes="114x114">
+	</head>
+
+	<body>
+		<ul id="nav-list">
+			<li class="nav-list-item nav-list-item-flex"><a class="nav-link" href="/">Panoptikos</a></li>
+			<li class="nav-list-item"><a class="nav-link" href="/supporters">Supporters</a></li>
+			<li class="nav-list-item"><a class="nav-link" href="/feedback">Feedback</a></li>
+			<li class="nav-list-item"><a class="nav-link" href="/settings">Settings</a></li>
+		</ul>
+
+		<ul id="flash-list"></ul>
+
+		<div id="content"></div>
+
+		<!-- COMPILED_JS_HERE -->
+		<script src="/sprinkles/main.js"></script>
+		<script src="/sprinkles/flash.js"></script>
+		<script src="/sprinkles/logger.js"></script>
+		<script src="/sprinkles/page.js"></script>
+		<script src="/sprinkles/router.js"></script>
+		<script src="/sprinkles/privacy/privacy.js"></script>
+		<script src="/sprinkles/session.js"></script>
+		<script src="/sprinkles/storage.js"></script>
+		<script src="/sprinkles/string.js"></script>
+		<script src="/sprinkles/template.js"></script>
+		<script src="/custom/main/app.js"></script>
+		<script src="/custom/main/config.js"></script>
+		<script src="/custom/feedback/feedback-controller.js"></script>
+		<script src="/custom/reddit/thread-list-item.js"></script>
+		<script src="/custom/reddit/thread-list-request.js"></script>
+		<script src="/custom/settings/settings.js"></script>
+		<script src="/custom/settings/settings-controller.js"></script>
+		<script src="/custom/subreddit-list/subreddit-list-controller.js"></script>
+		<script src="/custom/supporters/supporters-controller.js"></script>
+		<script src="/custom/thread-list/columns-manager.js"></script>
+		<script src="/custom/thread-list/thread-processor.js"></script>
+		<script src="/custom/thread-list/thread-list-controller.js"></script>
+		<script type="text/javascript">app = new custom.main.App(); app.init();</script>
+
+		<!-- Google Analytics -->
+		<script>
+			(function() {
+				if (sprinkles.privacy.Privacy.doNotTrack()) {
+					return;
+				}
+				(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-44086983-1","panoptikos.com");ga("send","pageview");
+			})();
+		</script>
+
+		<!-- Tell visitors to enable JavaScript -->
+		<noscript>
+			<p><strong>Enable JavaScript</strong> to conveniently browse through all the subreddits you like.</p>
+
+			<p>If you use a script blocker, please unblock the following URLs:</p>
+
+			<table>
+				<tr>
+					<th>URL to unblock</th>
+					<th>Reason why it’s needed</th>
+				</tr>
+				<tr>
+					<td>www.panoptikos.com</td>
+					<td>Brain of Panoptikos</td>
+				</tr>
+					<tr>
+					<td>reddit.com</td>
+					<td>Content from Reddit</td>
+				</tr>
+			</table>
+
+			<p>Thank you!</p>
+		</noscript>
+	</body>
+</html>
